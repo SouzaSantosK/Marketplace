@@ -3,12 +3,15 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        @vite('resources/scss/app.scss')
+        @vite('resources/scss/form.scss')
         <title>Cadastro</title>
     </head>
     <body>
         <section>
-            <h1><span>Bem-vindo,</span> vamos fazer de você um membro.</h1>
+            <div class="title">
+                <h1>Faça seu <span>Cadastro</span></h1>
+                <p>ou <a href="./login">faça seu login</a></p>
+            </div>
             <form method="POST" action="/cadastrar">
                 @csrf
                 <div class="input-group">
@@ -72,54 +75,13 @@
                             />
                         </svg>
                     </div>
-                    <!-- <div class="required-password">
-                        <p><span class="password-status">X</span> - Mínimo de 8 caracteres</p>
-                        <p><span class="password-status">X</span> - Letras maiúsculas, minúsculas e um número</p>
-                    </div> -->
                 </div>
-                <!-- <div class="input-group">
-                    <input
-                        required
-                        type="text"
-                        name="text"
-                        autocomplete="off"
-                    />
-                    <label>Data de Nascimento</label>
-                </div> -->
-                <div class="terms">
-                    <input type="checkbox" name="privacy" id="privacy" />
-                    <p>
-                        Ao marcar esta caixa, você concorda com a
-                        <span>Política de privacidade</span> e os
-                        <span>termos de uso da plataforma</span>.
-                    </p>
-                </div>
-                <input type="submit" value="Cadastrar" class="submit-button"/>
+                <input type="submit" value="Cadastrar" class="submit-button" />
             </form>
+            <p class="copy">
+                &copy; 2024 - Todos os direitos reservados
+                <a href="">Política</a> e <a href="">Privacidade</a>
+            </p>
         </section>
-        <script>
-            const passwordBtn = document.getElementById("password-btn");
-            const passwordInput = document.getElementById("password-input");
-            // const passwordSpan = document.querySelectorAll(".password-status");
-
-            passwordBtn.addEventListener("click", () => {
-                passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-            })
-
-            // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-
-            // passwordInput.addEventListener("input", function () {
-            //     const validationResult = passwordRegex.test(this.value);
-
-            //     if (validationResult) {
-            //         console.log(`${this.value} é valido`);
-            //         passwordSpan.innerText = "O";
-            //     } else {
-            //         console.log(`${this.value} é inválido`);
-            //         passwordSpan.innerText = "X";
-            //     }
-            // })
-
-        </script>
     </body>
 </html>

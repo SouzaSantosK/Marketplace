@@ -8,13 +8,13 @@
 </head>
 <body>
     <nav id="nav">
-        <a href="">Link 1</a>
-        <a href="">Link 1</a>
-        <a href="">Link 1</a>
+        <a href="">Home</a>
+        <a href="">Produtos</a>
+        <a href="">Sobre nós</a>
     </nav>
     {{ $slot }}
     <footer>
-        <p>@Textotexto</p>
+        <p>&copy; 2024 TheStore - Todos os direitos reservados.</p>
     </footer>
     <script>
         const navbar = document.getElementById('nav');
